@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.grid-container {
+    width: 1200px;
+    height: 600px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+}
+
+
+.cell {
+    border: 0.2px solid grey;
+    text-align: center;
+}
+.cell.alive {
+    color: white;
+    background-color: black;
+}
