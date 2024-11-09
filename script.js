@@ -73,11 +73,9 @@ class Game {
         let aliveNeighbors = 0;
         
         for (const [dx, dy] of neighborOffsets) {
-            const ni = i + dx; 
-            const nj = j + dy;
-            if (ni >= 0 && ni < this.playGrid.n && nj >= 0 && nj < 2 * this.playGrid.n) {
-                aliveNeighbors += this.playGrid.cells[ni][nj];
-            }
+            const ni = (i + dx + this.playGrid.n) % this.playGrid.n; 
+            const nj = (j + dy + 2 * this.playGrid.n) % (2 * this.playGrid.n);
+            aliveNeighbors += this.playGrid.cells[ni][nj];
         }
 
         if (this.playGrid.cells[i][j] == 1) {
